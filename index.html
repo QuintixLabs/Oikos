@@ -34,6 +34,9 @@
 
   <!-- Prism JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
 
   <!-- Webring -->
   <script src="webring.js" defer></script>
@@ -59,15 +62,27 @@
 
     <!-- About -->
     <h2 id="about"><a class="anchor">#</a> About</h2>
-    <p class="section-text">
-      This is a webring for people passionate about the <span class="code">...</span> and other cool stuff ofc.
-    </p>
+    <p class="section-text">This is a webring for people passionate about the <span class="code">...</span> and other cool stuff ofc.</p>
+    <p class="section-text" id="member-count">Loading Members...</p>
+    <!-- fetch members -->
+    <script>
+      fetch('members.json')
+        .then(response => response.json())
+        .then(data => {
+          const countEl = document.getElementById('member-count');
+          countEl.innerHTML = `There are currently <b>${data.length}</b> members in the webring.`;
+        })
+        .catch(err => {
+          console.error("Failed to load members.json:", err);
+          document.getElementById('member-count').textContent = "Member count unavailable.";
+        });
+    </script>
 
     <!-- Joining -->
     <h2 id="joining"><a class="anchor">#</a> Joining</h2>
     <p class="section-text">To join, have a <b>personal website</b> and add the following links to it <b>(they have to be on the main page)</b>:</p>
     <div class="snippet-container">
-    <button class="copy-btn" data-copy-target="#snippet">Copy</button>
+    <button class="copy-btn">Copy</button>
     <pre><code id="snippet" class="language-html">
 &lt;a href="https://fr0st-iwnl.github.io/webring/prev.html?name=&lt;name&gt;"&gt;⬅ Previous&lt;/a&gt;
 &lt;a href="https://fr0st-iwnl.github.io/webring/"&gt;Webring&lt;/a&gt;
@@ -80,8 +95,15 @@
       <li>Previous: <!-- <a href="prev.html?name=&lt;name&gt;">https://fr0st-iwnl.github.io/webring/prev.html?name=&lt;name&gt;</a> -><span class="code">https://fr0st-iwnl.github.io/webring/prev.html?name=&lt;name&gt</span></li>
       <li>Random: <!-- <a href="rand.html">https://fr0st-iwnl.github.io/webring/rand.html</a> -><span class="code">https://fr0st-iwnl.github.io/webring/rand.html</span></li>
     </ul>-->
-    <p class="section-text">and make a PR to one of the <a href="">repos</a> adding yourself to the <span class="code">members.json</span> file: </p>
-    <p class="section-text"><span class="code">{ "name": "fukitsun", "site": "https://fukitsun.xyz"},</span></p>
+    <p class="section-text">don't forget to replace <span class="code">&lt;name&gt;</span> with your own name</p>
+    <p class="section-text">and make a PR to one of the <a href="https://github.com/fr0st-iwnl/webring">repos</a> adding yourself to the <a href="https://github.com/fr0st-iwnl/webring/blob/master/members.json" target="_blank">members.json</a> file: </p>
+    <div class="snippet-container">
+    <button class="copy-btn">Copy</button>
+    <pre><code class="language-json" id="snippet">
+{"name": "your-name", "site": "https://your-site.com"}</code></pre>
+    </div>
+    
+    <p class="section-text">Inactive sites or sites that don't add the widget within a <b>month</b> will be removed to keep the webring healthy. </p>
 
 
     <!-- Support -->

@@ -9,30 +9,32 @@
  * Copy Button
 */
 document.querySelectorAll(".copy-btn").forEach(button => {
-  let timeoutId = null; // track the timeout for this button
-
-  button.addEventListener("click", () => {
-    const target = document.querySelector(button.dataset.copyTarget);
-    if (!target) return;
-
-    const text = target.textContent.trim(); // use textContent for consistent copy
-
-    navigator.clipboard.writeText(text).then(() => {
-      // Clear any previous timeout to avoid stacking
-      if (timeoutId) clearTimeout(timeoutId);
-
-      button.textContent = "Copied ˃ 𖥦 ˂";
-      button.classList.add("copied");
-
-      timeoutId = setTimeout(() => {
-        button.textContent = "Copy";
-        button.classList.remove("copied");
-        timeoutId = null; // reset
-      }, 1500);
-    }).catch(err => {
-      console.error(":( failed to copy text:", err);
+    let timeoutId = null; // track the timeout for this button
+    button.addEventListener("click", () => {
+        // Find the closest container, then find the code element within it
+        const container = button.closest('.snippet-container');
+        const target = container ? container.querySelector('code') : null;
+        
+        if (!target) {
+            console.error("No code element found in container");
+            return;
+        }
+        
+        const text = target.textContent.trim(); // use textContent for consistent copy
+        navigator.clipboard.writeText(text).then(() => {
+            // Clear any previous timeout to avoid stacking
+            if (timeoutId) clearTimeout(timeoutId);
+            button.textContent = "Copied ˃ 𖥦 ˂";
+            button.classList.add("copied");
+            timeoutId = setTimeout(() => {
+                button.textContent = "Copy";
+                button.classList.remove("copied");
+                timeoutId = null; // reset
+            }, 1500);
+        }).catch(err => {
+            console.error(":( failed to copy text:", err);
+        });
     });
-  });
 });
 
 
