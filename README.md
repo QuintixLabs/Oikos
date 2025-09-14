@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://fr0st-iwnl.github.io/webring/" target="_blank"><img src="assets/img/logo.png" alt="Webring Logo" width="200"></a>
+  <a href="https://webring.fr0st.xyz/" target="_blank"><img src="assets/img/logo.png" alt="Webring Logo" width="200"></a>
 </h1>
 <p align="center"><strong>🌐 A lightweight webring to link cool websites together.</strong></p>
 
@@ -49,10 +49,10 @@ graph LR
 1. Have a personal website.  
 2. Add the webring links to your site **(they have to be on the main page)**:
 ```html
-<a href="https://fr0st-iwnl.github.io/webring/prev.html?name=<name>">⬅ Previous</a>
-<a href="https://fr0st-iwnl.github.io/webring/">Webring</a>
-<a href="https://fr0st-iwnl.github.io/webring/rand.html">🎲 Random</a>
-<a href="https://fr0st-iwnl.github.io/webring/next.html?name=<name>">Next ➡</a>
+<a href="https://webring.fr0st.xyz/prev.html?name=<name>">⬅ Previous</a>
+<a href="https://webring.fr0st.xyz/">Webring</a>
+<a href="https://webring.fr0st.xyz/rand.html">🎲 Random</a>
+<a href="https://webring.fr0st.xyz/next.html?name=<name>">Next ➡</a>
 ```
 3. Add yourself to the `members.json` file:
 ```json
