@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://ourwebr.ing" target="_blank"><img src="assets/img/logo.png" alt="Webring Logo" width="200"></a>
+  <a href="https://fr0st-iwnl.github.io/webring/" target="_blank"><img src="assets/img/logo.png" alt="Webring Logo" width="200"></a>
 </h1>
 <p align="center"><strong>🌐 A lightweight webring to link cool websites together.</strong></p>
 
