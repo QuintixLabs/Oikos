@@ -1,7 +1,7 @@
 /**
  * WEBRING.JS
- * -----------------------------------------------------------------------------------------
- * Primarily used for the functionality of the webring (next.html, rand.html, prev.html).
+ * ---------------------------------------------------------------------------------------------------------------------
+ * Primarily used for the functionality of the webring (next.html, rand.html, prev.html and a lil bit for index.html).
 */
 
 
