@@ -112,8 +112,11 @@
       font-weight: 700;
       font-size: 2rem;
       background: white;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;              /* standard */
+      -webkit-background-clip: text;      /* safari/chrome */
+      color: transparent;                 /* fallback */
+      -webkit-text-fill-color: transparent; /* safari-specific */
+
       background-size: 200% auto;
       display: inline-block;
     }
