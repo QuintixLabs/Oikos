@@ -1,0 +1,405 @@
+/*--------------------------------------------------------------
+#                         STYLE.CSS
+#---------------------------------------------------------------
+#            Handles the styling for index.html
+--------------------------------------------------------------*/
+
+
+ :root {
+    --background-color: #0c0c0c;
+    --background-color2: #1a1a1a;
+    --secondary-color: #333;
+    --white: #ffffff;
+    --tertiary-color: #CDFF71;
+    --visited: #888888;
+    --selection: #36576b;
+}
+
+    body {
+      background-color: var(--background-color);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    ::selection{
+        background: var(--selection);
+        color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .site-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    /* headings with # anchor */
+    h1, h2, h3 {
+      display: flex;
+      text-align: left;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      margin: 2rem 0 1rem;
+    }
+
+    h1 a, h2 a, h3 a {
+      text-decoration: none;
+      color: var(--tertiary-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.2s;
+    }
+
+    h1 a:hover, h2 a:hover, h3 a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+    border: none;
+    border-top: 2px dotted white;
+    margin: 2rem 0;
+    opacity: 0.1;
+    }
+
+    b {
+        color: var(--tertiary-color);
+    }
+
+/*--------------------------------------------------------------
+# WEBRING HEADER
+--------------------------------------------------------------*/
+    .webring-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      background: #0c0c0c;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transform: rotate(0deg);
+    }
+
+    .logo-img:hover {
+      transform: rotate(360deg);
+    }
+
+
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 2rem;
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      display: inline-block;
+    }
+
+    .logo-text::selection {
+      background: var(--selection);
+      -webkit-text-fill-color: white;
+      color: white; 
+    }
+
+/*--------------------------------------------------------------
+# MEMBERS LIST
+--------------------------------------------------------------*/
+    #members {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin: 0;
+      text-align: left;
+    }
+
+    #members li a {
+      color: #AAAAAA;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    #members li a:hover {
+      text-decoration: underline;
+    }
+
+    #members li a:visited {
+        color: var(--visited);
+    }
+
+/*--------------------------------------------------------------
+# SECTION TEXT
+--------------------------------------------------------------*/
+
+    /* section text alignment */
+    .section-text {
+      text-align: left;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    /* section text links */
+    .section-text a {
+      color: #AAAAAA;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .section-text a:hover {
+      text-decoration: underline;
+    }
+
+    .section-text a:active {
+      color: #FFFFFF;
+    }
+
+/*--------------------------------------------------------------
+# WIDGET PREVIEW
+--------------------------------------------------------------*/
+    .widget {
+      margin-top: 1rem;
+      text-align: left;
+    }
+
+    .widget a {
+      margin-right: 1rem;
+      color: #AAAAAA;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .widget a:hover {
+      text-decoration: underline;
+    }
+
+    .widget a:active {
+      color: #FFFFFF;
+    }
+
+    a.webring-logo-link:hover {
+      text-decoration: none;
+    }
+
+    a.webring-logo-link img.webring-logo {
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+    }
+
+
+/*--------------------------------------------------------------
+# CODE / PRISM JS
+--------------------------------------------------------------*/
+
+    .code {
+      background-color: var(--secondary-color);
+      padding: 1px 3px;
+      border-radius: 3px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95em;
+    }
+
+
+    /* prism js */
+    pre[class*="language-"] {
+      background: none !important;
+    }
+
+    .snippet-container {
+      position: relative;
+      max-width: 800px;
+      margin: 1rem 0;
+      font-family: "Inter", monospace;
+    }
+
+    .snippet-container pre {
+      background: #0c0c0c;
+      color: #eaeaea;
+      padding: 1rem;
+      border: 1px solid var(--secondary-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre;
+      text-align: left;
+    }
+
+    .snippet-container code {
+      display: inline;
+    }
+
+    
+    .language-label {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.6rem;
+      background-color: var(--background-color2);
+      border: 1px solid var(--secondary-color);
+      color: var(--tertiary-color);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--background-color2);
+      color: var(--white);
+      border: 1px solid var(--secondary-color);
+      font-family: Inter;
+      border-radius: 5px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      text-decoration: dashed underline;
+      color: var(--white);
+    }
+
+    .copy-btn.copied {
+      color: #fff;
+    }
+
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+    .webring-footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--secondary-color);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border: 1px solid var(--secondary-color);
+      border-radius: 8px;
+      transition: background 0.1s ease, transform 0.2s ease;
+    }
+
+    .footer-logo:hover{
+      background: var(--secondary-color);
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: #AAAAAA;
+      white-space: pre-wrap;
+    }
+
+    .footer-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .github-icon {
+      color: #AAAAAA;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .github-icon:hover {
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      max-width: 300px;
+      justify-content: flex-end;
+    }
+
+
+    .random-quote {
+      font-size: 0.8rem;
+      color: #CCCCCC;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+      text-align: right;
+    }
+
+    @keyframes fadeIn {
+      0% { 
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+/*--------------------------------------------------------------
+# MOBILE
+--------------------------------------------------------------*/
+    @media (max-width: 768px) {
+      .webring-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-center {
+        position: static;
+        transform: none;
+      }
+
+      .footer-right {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .random-quote {
+        text-align: center;
+      }
+    }
+
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>webring</title>
+
+  <!-- Meta's -->
+  <meta name="title" content="Webring" />
+  <meta name="author" content="fr0st, fr0st.xyz">
+  <meta name="description" content="A webring connecting cool websites together." />
+  <meta name="theme-color" content="#0C0C0C">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Webring" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ourwebr.ing/" />
+  <meta property="og:theme-color" content="#0C0C0C">
+  <meta property="og:description" content="A webring connecting cool websites together." />
+
+  <!-- X (Twitter) -->
+  <meta property="twitter:title" content="Webring" />
+  <meta property="twitter:url" content="https://ourwebr.ing/" />
+  <meta property="twitter:theme-color" content="#0C0C0C">
+  <meta property="twitter:description" content="A webring connecting cool websites together." />
+
+  <!-- Links -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <script src="assets/js/script.js" defer></script> 
+
+  <!-- Prism CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+  <!-- Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+
+  <!-- Webring -->
+  <script src="webring.js" defer></script>
+
+  <!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="container">
+    <header class="webring-header">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo" class="logo-img">
+    <span class="logo-text" id="logo-text">webring</span>
+  </a>
+</header>
+  <hr> <!-- small hr -->
+
+    <!-- Members -->
+    <h2 id="webring-members"><a class="anchor">#</a> Webring Members</h2>
+    <ul id="members"></ul>
+
+    <!-- About -->
+    <h2 id="about"><a class="anchor">#</a> About</h2>
+    <p class="section-text">
+      This is a webring for people passionate about the <span class="code">circlejelq 😎</span> and other cool stuff ofc.
+    </p>
+
+    <!-- Joining -->
+    <h2 id="joining"><a class="anchor">#</a> Joining</h2>
+    <p class="section-text">To join, have a <b>personal website</b> and add the following links to it <b>(they have to be on the main page)</b>:</p>
+    <div class="snippet-container">
+    <button class="copy-btn" data-copy-target="#snippet">Copy</button>
+    <pre><code id="snippet" class="language-html">
+&lt;a href="https://ourwebr.ing/prev.html?name=&lt;name&gt;"&gt;⬅ Previous&lt;/a&gt;
+&lt;a href="https://ourwebr.ing/"&gt;Webring&lt;/a&gt;
+&lt;a href="https://ourwebr.ing/rand.html"&gt;🎲 Random&lt;/a&gt;
+&lt;a href="https://ourwebr.ing/next.html?name=&lt;name&gt;"&gt;Next ➡&lt;/a&gt;</code></pre>
+    </div>
+    <!--- <ul class="section-text">
+      <li>Webring: <!-- <a href="index.html">https://ourwebr.ing/</a> -><span class="code">https://ourwebr.ing/</span></li>
+      <li>Next: <!-- <a href="next.html?name=&lt;name&gt;">https://ourwebr.ing/next.html?name=&lt;name&gt;</a> -><span class="code">https://ourwebr.ing/next.html?name=&lt;name&gt</span></li>
+      <li>Previous: <!-- <a href="prev.html?name=&lt;name&gt;">https://ourwebr.ing/prev.html?name=&lt;name&gt;</a> -><span class="code">https://ourwebr.ing/prev.html?name=&lt;name&gt</span></li>
+      <li>Random: <!-- <a href="rand.html">https://ourwebr.ing/rand.html</a> -><span class="code">https://ourwebr.ing/rand.html</span></li>
+    </ul>-->
+    <p class="section-text">and make a PR to one of the <a href="">repos</a> adding yourself to the <span class="code">members.json</span> file: </p>
+    <p class="section-text"><span class="code">{ "name": "fukitsun", "site": "https://fukitsun.xyz"},</span></p>
+
+
+    <!-- Support -->
+    <h2 id="support"><a class="anchor">#</a> Support</h2>
+    <p class="section-text">If you don't know how to / can't make a PR for some reason feel free to <a href="mailto:fr0st.xyz@tuta.io?subject=Webring Site Submission">contact me</a>, I can add you to the webring myself.</p>
+
+    <!-- What Happens If Your Name Is Wrong? -->
+    <h2 id="what-happens-if-your-name-is-wrong"><a class="anchor">#</a> What Happens If Your Name Is Wrong?</h2>
+    <p class="section-text">If you misspell your name in the links or the PR hasn't been merged yet, the next and prev links will lead to <span class="code">https://ourwebr.ing/</span></p>
+    
+    <!-- Widget -->
+    <h2 id="widget-preview"><a class="anchor">#</a> Widget Preview <span class="code">>ᴗ•</span></h2>
+
+    <div class="widget" id="widget">
+        <script>
+            fetch('./members.json')
+            .then(res => res.json())
+            .then(members => {
+                const widget = document.getElementById('widget');
+                if (!members || members.length === 0) return;
+
+                // Hub navigation: direct links
+                const firstMember = members[0];          // Next → first
+                const lastMember = members[members.length - 1]; // Previous → last
+                const randomMember = members[Math.floor(Math.random() * members.length)];
+
+                widget.innerHTML = `
+                <a href="${lastMember.site}">⬅ Previous</a>
+                <a href="/" class="webring-logo-link">
+                  <img src="assets/img/logo.png" alt="Webring Logo" class="webring-logo">
+                </a>
+                <a href="${randomMember.site}">🎲 Random</a>
+                <a href="${firstMember.site}">Next ➡</a>
+                `;
+            });
+            </script>
+    </div>
+
+ <!-- Footer -->
+    <footer class="webring-footer">
+      <div class="footer-left">
+        <img src="assets/img/logo.png" alt="Logo" class="footer-logo">
+        <span class="footer-text">A loop of cool corners</span>
+      </div>
+      
+      <div class="footer-center">
+        <a href="https://github.com" class="github-icon">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <div class="footer-right">
+        <span class="random-quote" id="randomQuote"></span>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+</html>
