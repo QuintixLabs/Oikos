@@ -8,7 +8,7 @@ fetch('./members.json')
   .then(response => response.json())
   .then(members => {
 
-    // Render members list on index.html
+    // render members list on index.html
     const membersList = document.getElementById('members');
     if (membersList) {
       members.forEach(member => {
@@ -27,10 +27,10 @@ fetch('./members.json')
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
 
-    // Only run redirect logic if on next.html, prev.html, or rand.html
+    // only run redirect logic if on next.html, prev.html, or rand.html
     if (['next.html','prev.html','rand.html'].includes(path)) {
 
-      // If a name is provided but does not exist, redirect to hub
+      // if a name is provided but does not exist, redirect to hub
       if (name && !members.some(m => m.name === name)) {
         window.location.href = 'index.html';
       } else if (path === 'next.html' && name) {
