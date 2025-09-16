@@ -100,6 +100,7 @@
       object-fit: contain;
       transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       transform: rotate(0deg);
+      color: white; /* for alt message */
     }
 
     .logo-img:hover {
