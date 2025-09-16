@@ -32,18 +32,18 @@ fetch('./members.json')
 
       // if a name is provided but does not exist, redirect to hub
       if (name && !members.some(m => m.name === name)) {
-        window.location.href = 'index.html';
+        window.location.href = '/';
       } else if (path === 'next.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const next = members[(idx + 1) % members.length];
-        window.location.href = next ? next.site : 'index.html';
+        window.location.href = next ? next.site : '/';
       } else if (path === 'prev.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const prev = members[(idx - 1 + members.length) % members.length];
-        window.location.href = prev ? prev.site : 'index.html';
+        window.location.href = prev ? prev.site : '/';
       } else if (path === 'rand.html') {
         if (members.length === 0) {
-          window.location.href = 'index.html';
+          window.location.href = '/';
           return;
         }
 
