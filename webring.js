@@ -27,9 +27,9 @@ fetch('./members.json')
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
 
-    // Determine hub path depending on host
+    // determine hub path depending on host
     const isGitHubPages = window.location.hostname.includes('github.io');
-    // REPLACE "/webring/" with ur repo name this makes it work for Github Pages too
+    // NOTE: If hosting on GitHub Pages, replace "/webring/" with your repo name
     const hubPath = isGitHubPages ? '/webring/' : '/';
 
     if (['next.html','prev.html','rand.html'].includes(path)) {

@@ -64,6 +64,11 @@
 <body>
   <h1>404</h1>
   <p>Oops! The page you’re looking for doesn't exist.</p>
-  <a href="/">⬅ Back to Webring</a>
+  <a id="back-link" href="/">⬅ Back to Webring</a>
+ <script>
+    const isGitHubPages = location.hostname.includes("github.io");
+    const hubUrl = isGitHubPages ? "/webring/index.html" : "/";
+    document.getElementById("back-link").href = hubUrl;
+ </script>
 </body>
 </html>
