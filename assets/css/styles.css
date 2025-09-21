@@ -11,7 +11,7 @@
     --secondary-color: #333;
     --white: #ffffff;
     --tertiary-color: #CDFF71;
-    --visited: #555555;
+    --visited: #666666;
     --selection: #36576b;
 }
 
@@ -25,21 +25,73 @@
       margin: 0;
     }
 
+/*--------------------------------------------------------------
+# NO JAVASCRIPT ENABLED
+--------------------------------------------------------------*/
+    .no-js-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(5px); /* blur everything behind */
+      background-color: rgba(0, 0, 0, 0.7); /* semi-transparent overlay */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .no-js-message {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+/*--------------------------------------------------------------
+# SCROLLBAR
+--------------------------------------------------------------*/
+
+    /* Scrollbar styling for Chrome / WebKit */
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--background-color2);
+      border-radius: 6px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #666666;
+      border-radius: 6px;
+      border: 3px solid var(--background-color2);
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #888888;
+    }
+
+/*--------------------------------------------------------------
+# SELECTION
+--------------------------------------------------------------*/
+
     ::selection{
         background: var(--selection);
         color: white;
     }
 
+/*--------------------------------------------------------------
+# HEAD STUFF
+--------------------------------------------------------------*/
+
     .container {
       max-width: 800px;
       width: 100%;
       text-align: center;
-    }
-
-    .site-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
     }
 
     /* headings with # anchor */
