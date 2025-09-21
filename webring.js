@@ -8,7 +8,7 @@ fetch('./members.json')
   .then(response => response.json())
   .then(members => {
 
-    // render members list on index.html
+    // Render members list on index.html
     const membersList = document.getElementById('members');
     if (membersList) {
       members.forEach(member => {
@@ -27,44 +27,44 @@ fetch('./members.json')
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
 
-    // only run redirect logic if on next.html, prev.html, or rand.html
-    if (['next.html','prev.html','rand.html'].includes(path)) {
+    // Determine hub path depending on host
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const hubPath = isGitHubPages ? '/webring/index.html' : '/index.html';
 
-      // NOTE: If you are hosting this on GitHub Pages, make sure to include your repo name in paths.
-      // Example: instead of "/" use "/webring/index.html" (Replace "webring" with your repo name if different)
-      // This is because GitHub Pages serves your site under https://username.github.io/<repo>/
-      // Without the repo name, it will try to load https://username.github.io/index.html (which doesn't exist).
+    if (['next.html','prev.html','rand.html'].includes(path)) {
 
       // if a name is provided but does not exist, redirect to hub
       if (name && !members.some(m => m.name === name)) {
-        window.location.href = '/webring/index.html';
-      } else if (path === 'next.html' && name) {
+        window.location.href = hubPath;
+        return;
+      }
+
+      if (path === 'next.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const next = members[(idx + 1) % members.length];
-        window.location.href = next ? next.site : '/webring/index.html';
+        window.location.href = next ? next.site : hubPath;
       } else if (path === 'prev.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const prev = members[(idx - 1 + members.length) % members.length];
-        window.location.href = prev ? prev.site : '/webring/index.html';
+        window.location.href = prev ? prev.site : hubPath;
       } else if (path === 'rand.html') {
         if (members.length === 0) {
-          window.location.href = '/webring/index.html';
+          window.location.href = hubPath;
           return;
         }
 
         let randIndex;
-        if (name) {
+        if(name){
           const currentIndex = members.findIndex(m => m.name === name);
           do {
             randIndex = Math.floor(Math.random() * members.length);
-          } while (randIndex === currentIndex && members.length > 1);
+          } while(randIndex === currentIndex && members.length > 1);
         } else {
           randIndex = Math.floor(Math.random() * members.length);
         }
 
         window.location.href = members[randIndex].site;
       }
-
     }
 
   })
