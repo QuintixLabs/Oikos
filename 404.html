@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 - Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <style>
+
+    :root {
+    --background-color: #0c0c0c;
+    --background-color2: #1a1a1a;
+    --secondary-color: #333;
+    --white: #ffffff;
+    --tertiary-color: #CDFF71;
+    --selection: #36576b;
+}
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background-color: var(--background-color);
+      color: #AAAAAA;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    ::selection{
+        background: var(--selection);
+        color: var(--white);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      color: var(--tertiary-color);
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--tertiary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      background: #2E4F2F;
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <p>Oops! The page you’re looking for doesn't exist.</p>
+  <a href="/">⬅ Back to Webring</a>
+</body>
+</html>
