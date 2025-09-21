@@ -30,20 +30,25 @@ fetch('./members.json')
     // only run redirect logic if on next.html, prev.html, or rand.html
     if (['next.html','prev.html','rand.html'].includes(path)) {
 
+      // NOTE: If you are hosting this on GitHub Pages, make sure to include your repo name in paths.
+      // Example: instead of "/" use "/webring/index.html" (Replace "webring" with your repo name if different)
+      // This is because GitHub Pages serves your site under https://username.github.io/<repo>/
+      // Without the repo name, it will try to load https://username.github.io/index.html (which doesn't exist).
+
       // if a name is provided but does not exist, redirect to hub
       if (name && !members.some(m => m.name === name)) {
-        window.location.href = '/';
+        window.location.href = '/webring/index.html';
       } else if (path === 'next.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const next = members[(idx + 1) % members.length];
-        window.location.href = next ? next.site : '/';
+        window.location.href = next ? next.site : '/webring/index.html';
       } else if (path === 'prev.html' && name) {
         const idx = members.findIndex(m => m.name === name);
         const prev = members[(idx - 1 + members.length) % members.length];
-        window.location.href = prev ? prev.site : '/';
+        window.location.href = prev ? prev.site : '/webring/index.html';
       } else if (path === 'rand.html') {
         if (members.length === 0) {
-          window.location.href = '/';
+          window.location.href = '/webring/index.html';
           return;
         }
 
