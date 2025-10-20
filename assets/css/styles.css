@@ -386,6 +386,16 @@
       white-space: pre-wrap;
     }
 
+    .footer-text a {
+      color: #AAAAAA;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
     .footer-center {
       position: absolute;
       left: 50%;

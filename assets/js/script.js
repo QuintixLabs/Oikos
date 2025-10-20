@@ -53,7 +53,8 @@ document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
  * Random Quotes
 */
     const quotes = [
-  "hey :) check this webring out",
+  "hey :) check out this webring template",
+  "Build your own webring here",
   "this is random but i like it",
   "for fun •ᴗ•",
   "hm, not bad actually :‹",
@@ -94,6 +95,16 @@ document.querySelectorAll('.snippet-container code').forEach(code => {
     code.parentElement.parentElement.insertBefore(label, code.parentElement);
   }
 });
+
+
+/**
+ * Set the current year in the footer 
+ */
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+}
 
 
 

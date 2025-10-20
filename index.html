@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>webring</title>
+  <title>Oikos - A Webring Template for Everyone</title>
 
   <!-- Meta's -->
   <meta name="title" content="Webring" />
@@ -14,13 +14,13 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Webring" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://webring.fr0st.xyz/" />
+  <meta property="og:url" content="https://oikos-webring.netlify.app/" />
   <meta property="og:theme-color" content="#0C0C0C">
   <meta property="og:description" content="A webring connecting cool websites together." />
 
   <!-- X (Twitter) -->
   <meta property="twitter:title" content="Webring" />
-  <meta property="twitter:url" content="https://webring.fr0st.xyz/" />
+  <meta property="twitter:url" content="https://oikos-webring.netlify.app/" />
   <meta property="twitter:theme-color" content="#0C0C0C">
   <meta property="twitter:description" content="A webring connecting cool websites together." />
 
@@ -70,10 +70,36 @@
     <header class="webring-header">
   <a href="./" class="logo">
     <img src="assets/img/logo.png" alt="Logo" class="logo-img">
-    <span class="logo-text" id="logo-text">webring</span>
+    <span class="logo-text" id="logo-text">Oikos</span>
   </a>
     </header>
   <hr> <!-- small hr -->
+
+  <!-- Members -->
+    <h2 id="about-this-template"><a class="anchor">#</a> About This Template</h2>
+
+    <p class="section-text">
+    <b>Oikos</b> comes from the ancient Greek word for <strong>home</strong> or <strong>household</strong>. 
+    It is an <a href="https://github.com/fr0st-iwnl/Oikos">open-source</a> <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">webring</a> template that anyone can use and customize. 
+    You can rename it, change the design, add your own sites and members, and create your own webring.
+    </p>
+
+
+    <p class="section-text">
+    The logo is a cube or square that looks like a little house and represents the idea of a home.
+    </p>
+
+    <p class="section-text">
+    This template is built purely with <strong>HTML, CSS, and JavaScript</strong>. 
+    There are no special frameworks. The code is fully commented and organized so it is easy to understand and modify. 
+    The members are stored in a simple <a href="https://github.com/fr0st-iwnl/Oikos/blob/master/members.json" target="_blank">members.json</a> file, making it easy to add or remove sites. 
+    You can also press <b>"Use this template"</b> on <a href="https://github.com/fr0st-iwnl/Oikos/" target="_blank">GitHub</a> to start making your own customized webring.
+    </p>
+
+    <p class="section-text">
+    Below you will see the <b>"Joining"</b> and other sections but <b>this is just part of the template</b>. 
+    You cannot actually join a webring here. It is just an example showing how a webring can look using Oikos.
+    </p>
 
     <!-- Members -->
     <h2 id="webring-members"><a class="anchor">#</a> Webring Members</h2>
@@ -81,6 +107,7 @@
 
     <!-- About -->
     <h2 id="about"><a class="anchor">#</a> About</h2>
+
     <p class="section-text">This is a webring for people passionate about the <span class="code">...</span> and other cool stuff ofc.</p>
     <p class="section-text" id="member-count">Loading Members...</p>
     <!-- fetch members -->
@@ -103,10 +130,10 @@
     <div class="snippet-container">
     <button class="copy-btn">Copy</button>
     <pre><code id="snippet" class="language-html">
-&lt;a href="https://webring.fr0st.xyz/prev.html?name=&lt;name&gt;"&gt;⬅ Previous&lt;/a&gt;
-&lt;a href="https://webring.fr0st.xyz/"&gt;Webring&lt;/a&gt;
-&lt;a href="https://webring.fr0st.xyz/rand.html"&gt;🎲 Random&lt;/a&gt;
-&lt;a href="https://webring.fr0st.xyz/next.html?name=&lt;name&gt;"&gt;Next ➡&lt;/a&gt;</code></pre>
+&lt;a href="https://oikos-webring.netlify.app/prev.html?name=&lt;name&gt;"&gt;⬅ Previous&lt;/a&gt;
+&lt;a href="https://oikos-webring.netlify.app/"&gt;Webring&lt;/a&gt;
+&lt;a href="https://oikos-webring.netlify.app/rand.html"&gt;🎲 Random&lt;/a&gt;
+&lt;a href="https://oikos-webring.netlify.app/next.html?name=&lt;name&gt;"&gt;Next ➡&lt;/a&gt;</code></pre>
     </div>
     <p class="section-text">don't forget to replace <span class="code">&lt;name&gt;</span> with your own name</p>
     <p class="section-text">then create a PR <b>(Pull Request)</b> in the <a href="https://github.com/fr0st-iwnl/webring">repo</a> to add yourself to the <a href="https://github.com/fr0st-iwnl/webring/blob/master/members.json" target="_blank">members.json</a> file: </p>
@@ -125,7 +152,7 @@
 
     <!-- What Happens If Your Name Is Wrong? -->
     <h2 id="what-happens-if-your-name-is-wrong"><a class="anchor">#</a> What Happens If Your Name Is Wrong?</h2>
-    <p class="section-text">If you misspell your name in the links or the PR hasn't been merged yet, the next and prev links will lead to <span class="code">https://webring.fr0st.xyz/</span></p>
+    <p class="section-text">If you misspell your name in the links or the PR hasn't been merged yet, the next and prev links will lead to <span class="code">https://oikos-webring.netlify.app/</span></p>
     
     <!-- Widget -->
     <h2 id="widget-preview"><a class="anchor">#</a> Widget Preview <span class="code">>ᴗ•</span></h2>
@@ -168,7 +195,7 @@
     <footer class="webring-footer">
       <div class="footer-left">
         <img src="assets/img/logo.png" alt="Logo" class="footer-logo">
-        <span class="footer-text">A loop of cool corners</span>
+        <span class="footer-text">© <span id="year"></span> <a href="https://quintix.netlify.app" target="_blank">Quintix Labs</a> - <a href="https://fr0st.xyz" target="_blank">fr0st</a></span>
       </div>
       
       <div class="footer-center">
