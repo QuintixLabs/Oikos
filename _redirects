@@ -1,5 +1,4 @@
 # Netlify Redirects
 # -------------------
 
-https://fr0st-webring.netlify.app/* https://webring.fr0st.xyz/:splat 301!
 /* /404.html 404
