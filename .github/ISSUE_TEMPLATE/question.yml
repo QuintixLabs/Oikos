@@ -1,0 +1,28 @@
+name: Question / Help
+description: Ask a question or get help using the Oikos webring template
+labels: ["question", "help"]
+
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What is your question?
+      description: "Describe what you need help with or what you are trying to do."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried so far?
+      description: "Tell us what you've tried, and what didn't work as expected."
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: "Provide any extra details, screenshots, or code snippets that might help us understand the issue."
+    validations:
+      required: false
