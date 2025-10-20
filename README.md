@@ -1,18 +1,20 @@
 <h1 align="center">
-  <a href="https://webring.fr0st.xyz/" target="_blank"><img src="assets/img/logo.png" alt="Webring Logo" width="200"></a>
+  <a href="https://webring.fr0st.xyz/" target="_blank"><img src="https://github.com/user-attachments/assets/8f7989d0-80fc-44f5-bb89-4b289cfffe44" alt="Webring Logo" "></a>
 </h1>
-<p align="center"><strong>🌐 A lightweight webring to link cool websites together.</strong></p>
+<p align="center"><strong>🌐 A webring template for everyone </strong></p>
+
 
 <p align="center">
 <a href="#-what-is-it">What is it?</a> •
 <a href="#-how-it-works">How it works</a> •
-<a href="#-joining">Joining</a> •
+<a href="#-getting-started">Getting Started</a> •
+<!---<a href="#-joining">Joining</a> •-->
 <a href="#-contributors">Contributors</a>
 </p>
 
 ## 🌟 What is it?
 
-This is a **simple webring** for people who want to link their personal websites together.  
+This is a **simple webring template** for people who want to link their personal websites together.  
 
 ## 💡 How it works
 
@@ -20,6 +22,17 @@ This is a **simple webring** for people who want to link their personal websites
 - The webring provides links to **Next**, **Previous**, and **Random** sites.  
 - You can display the webring widget anywhere on your site.  
 - A simple [JSON](https://github.com/fr0st-iwnl/webring/blob/master/members.json) file keeps track of all members.
+
+## 🚀 Getting Started
+
+1. Press **"Use this template"** on GitHub to create your own copy.
+2. Clone your new repository locally:
+```bash
+git clone https://github.com/fr0st-iwnl/Oikos.git
+```
+3. Open `index.html` in your browser or host it on GitHub Pages / Netlify, or any static site host.
+4. Modify `members.json` to add your own members/sites.
+5. Customize the **HTML**, **CSS**, **JS** and **branding** to make it your own.
 
 ## 🔗 Navigation
 
@@ -44,6 +57,7 @@ graph LR
   style Alice fill:#4D70B7,stroke:white,stroke-width:1px
 ```
 
+<!---
 ## 📝 Joining
 
 1. Have a personal website.  
@@ -59,6 +73,7 @@ graph LR
 { "name": "yourname", "site": "https://yourwebsite.com" }
 ```
 4. That's it! You're in the webring.
+--->
 
 ## 🤝 Contributors
 
