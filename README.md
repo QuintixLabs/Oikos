@@ -28,7 +28,7 @@ This is a **simple webring template** for people who want to link their personal
 1. Press **"Use this template"** on GitHub to create your own copy.
 2. Clone your new repository locally:
 ```bash
-git clone https://github.com/fr0st-iwnl/Oikos.git
+git clone https://github.com/<yourusername>/Oikos.git
 ```
 3. Open `index.html` in your browser or host it on GitHub Pages / Netlify, or any static site host.
 4. Modify `members.json` to add your own members/sites.
