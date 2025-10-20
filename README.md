@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://webring.fr0st.xyz/" target="_blank"><img src="https://github.com/user-attachments/assets/8f7989d0-80fc-44f5-bb89-4b289cfffe44" alt="Webring Logo" "></a>
+  <a href="https://oikos-webring.netlify.app/" target="_blank"><img src="https://github.com/user-attachments/assets/8f7989d0-80fc-44f5-bb89-4b289cfffe44" alt="Webring Logo" "></a>
 </h1>
 <p align="center"><strong>🌐 A webring template for everyone </strong></p>
 
